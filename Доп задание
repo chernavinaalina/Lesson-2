@@ -1,0 +1,15 @@
+import random
+first_stone = random.randint(3, 20)
+def get_password(first_stone):
+    password = ''
+    for i in range(1, first_stone):
+        for j in range(2, first_stone):
+            if j <= i:
+                continue
+            if first_stone % (i + j) == 0:
+                password += str(i) + str(j)
+
+
+    return password
+print(first_stone)
+print(get_password(first_stone))
